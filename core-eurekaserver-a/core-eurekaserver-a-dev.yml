@@ -1,0 +1,34 @@
+spring:
+  application: 
+    name: core-eureka-server #通过该属性，我们可以指定微服务的名称后续在调用的时候只需要使用该名称就可以进行服务的访问
+
+server:
+  port: 7001
+eureka:
+  server:
+    nable-self-preservation: false                  ##设为false，关闭自我保护主要
+    eviction-interval-timer-in-ms: 60000            ##清理间隔 单位毫秒，默认是60*1000
+  instance:  
+    prefer-ip-address: true                         #是否优先使用ip地址作为主机名的标识
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    leaseRenewalIntervalInSeconds: 10               #客户端向服务的(注册中心)发送心跳的请求间隔
+    leaseExpirationDurationInSeconds: 120           #服务注册租期到期时间 : Eureka服务在收到最后一次心跳后得带的时间上限,超过该时间则服务端会将该服务实例从服务清单中剔除，从而禁止服务调用请求被发送到该实例上
+    hostname: eureka1                               #主机名，不配置则根据操作系统的主机名来获取（注意添加映射转换：127.0.0.1 eureka1）
+  client:
+#    register-with-eureka: false
+#    fetch-registry: false 
+    service-url: 
+      defaultZone: http://eureka1:8001/eureka/,http://eureka2:8002/eureka/
+management: 
+  security:
+    enabled: false                                  #禁用安全管理策略
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
