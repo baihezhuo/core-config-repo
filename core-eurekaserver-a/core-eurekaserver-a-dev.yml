@@ -1,6 +1,6 @@
-spring:
-  application: 
-    name: core-eureka-server #通过该属性，我们可以指定微服务的名称后续在调用的时候只需要使用该名称就可以进行服务的访问
+#spring:
+#  application: 
+#    name: core-eureka-server #通过该属性，我们可以指定微服务的名称后续在调用的时候只需要使用该名称就可以进行服务的访问
 
 server:
   port: 7001
