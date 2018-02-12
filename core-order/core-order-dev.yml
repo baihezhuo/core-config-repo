@@ -2,6 +2,14 @@ server:
   context-path: /
   port: 8001
 
+#配置注册服务发现中心的地址  
+eureka:
+  client:
+    service-url: 
+      defaultZone: http://eureka1:4002/eureka/,http://eureka2:4003/eureka/
+      
+#断路器请求超时时间设定
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000 
 
 ## Spring配置:
 spring: 
@@ -12,7 +20,7 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
     default-property-inclusion: NON_NULL      
-                
+
 druid: 
     type: com.alibaba.druid.pool.DruidDataSource
     order1-master: 
