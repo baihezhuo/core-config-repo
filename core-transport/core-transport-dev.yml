@@ -55,7 +55,7 @@ spring:
 
 mybatis:
     type-aliases-package: bhz.order
-    mapper-locations: classpath:bhz/order/mapping/*.xml
+    mapper-locations: classpath:bhz/transport/mapping/*.xml
 
 logging:
     level:
