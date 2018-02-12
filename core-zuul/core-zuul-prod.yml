@@ -1,13 +1,7 @@
 server:
   context-path: /
   port: 4005
-  
-#配置注册服务发现中心的地址  
-eureka:
-  client:
-    service-url: 
-      defaultZone: http://eureka1:4002/eureka/,http://eureka2:4003/eureka/
-
+ 
 #路由规则:
 #上传文件需要在url地址添加/zuul/*前缀
 zuul:

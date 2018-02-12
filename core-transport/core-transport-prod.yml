@@ -2,15 +2,22 @@ server:
   context-path: /
   port: 6002
  
-#配置注册服务发现中心的地址  
-eureka:
-  client:
-    service-url: 
-      defaultZone: http://eureka1:4002/eureka/,http://eureka2:4003/eureka/
-      
 #断路器请求超时时间设定
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000 
-   
+ 
+#开启断路器
+feign:
+  hystrix:
+    enabled: true
+  compression:
+    request:
+      min-request-size: 2048  
+      mime-types:
+        - text/xml, application/xml, application/json
+      enabled: true
+    respoonse: 
+      enabled: true
+        
 spring: 
   http: 
     encoding:
