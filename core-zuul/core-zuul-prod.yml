@@ -16,7 +16,15 @@ zuul:
     api-hello: 
       path: /core-order/**         #访问路径: http://localhost:4004/core-order/index
       serviceId: core-order       
-      
+    api-transport: 
+      path: /core-transport/**         
+      serviceId: core-transport  
+    api-invoke: 
+      path: /core-invoke/**         
+      serviceId: core-invoke  
+    api-dispatch: 
+      path: /core-dispatch/**         
+      serviceId: core-dispatch        
       
 ##配置全局api路由网关超时时间
 ##[这个时间尽可能的大,最好要包含调用服务内部的重试/段熔时间,保证内部服务返回正确的成功或失败信息]
