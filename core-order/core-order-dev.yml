@@ -1,6 +1,6 @@
 server:
   context-path: /
-  port: 8001
+  port: 8002
 
 #断路器请求超时时间设定
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000 
