@@ -1,8 +1,6 @@
 server:
   context-path: /
   port: 8002
-management:
-  port: 8012      
 #断路器请求超时时间设定
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000 
     
@@ -90,6 +88,9 @@ dubbo:
   application:
     id: core-transport
     name: core-transport
+    qos:
+      prot: 22222
+      enable: true 
   scan:
     basePackages: bhz.transport.service 
   protocol:
@@ -99,6 +100,18 @@ dubbo:
   registry:
     id: core-transport-registry
     address: zookeeper://192.168.1.111:2181?backup=192.168.1.112:2181,192.168.1.113:2181        
- 
+
+management:
+  port: 8012 
+  health:
+    dubbo:
+      status:
+        defaults: memory
+        extras: load,threadpool
+      
+endpoints:
+  dubbo:
+    enabled: true    
+    
     
     
