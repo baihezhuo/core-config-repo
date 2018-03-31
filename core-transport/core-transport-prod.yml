@@ -97,7 +97,7 @@ dubbo:
   protocol:
     id: dubbo
     name: dubbo
-    port: 12345
+    port: 12341
   registry:
     id: core-transport-registry
     address: zookeeper://192.168.1.111:2181?backup=192.168.1.112:2181,192.168.1.113:2181
