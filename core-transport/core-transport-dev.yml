@@ -83,14 +83,14 @@ pagehelper:
     reasonable: true
     supportMethodsArguments: true
     params: count=countSql
- 
- 
+
+
 dubbo:
   application:
     id: core-transport
     name: core-transport
     qos: 
-      port: 2222
+      port: 44444
       enable: true
   scan:
     basePackages: bhz.transport.service 

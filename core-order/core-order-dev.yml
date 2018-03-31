@@ -214,12 +214,12 @@ pagehelper:
 
 # Dubbo Config properties
 ## ApplicationConfig Bean
-dubbo:
+dubbo: 
   application:
     id: core-order
     name: core-order
     qos:
-      port: 2223
+      port: 33333
       enable: true
   scan:
     basePackages: bhz.order.service,bhz.order.service.* 
