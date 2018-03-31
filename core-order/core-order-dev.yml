@@ -218,11 +218,11 @@ dubbo:
   application:
     id: core-order
     name: core-order
+    qos:
+      port: 2223
+      enable: true
   scan:
     basePackages: bhz.order.service,bhz.order.service.* 
-  qos:
-    port: 3333
-    enable: true
   protocol: 
     id: dubbo
     name: dubbo
