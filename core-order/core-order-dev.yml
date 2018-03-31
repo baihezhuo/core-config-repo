@@ -1,7 +1,8 @@
 server:
   context-path: /
   port: 8001
-
+management:
+  port: 8011
 #断路器请求超时时间设定
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000 
 
@@ -210,7 +211,6 @@ pagehelper:
  
  
  
-
 
 # Dubbo Config properties
 ## ApplicationConfig Bean
