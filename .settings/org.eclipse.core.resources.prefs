@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//core-order/core-order-dev.properties=UTF-8
+encoding//core-order/core-order-prod.properties=UTF-8
+encoding//core-transport/core-transport-dev.properties=UTF-8
+encoding//core-transport/core-transport-prod.properties=UTF-8
+encoding//core-zuul/core-zuul-dev.properties=UTF-8
+encoding//core-zuul/core-zuul-prod.properties=UTF-8
