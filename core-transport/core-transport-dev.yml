@@ -90,9 +90,6 @@ dubbo:
   application:
     id: core-transport
     name: core-transport
-    qos: 
-      port: 22222
-      enable: false
   scan:
     basePackages: bhz.transport.service 
   protocol:
