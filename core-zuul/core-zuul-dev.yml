@@ -1,0 +1,65 @@
+server:
+  context-path: /
+  port: 4004
+  
+#路由规则:
+#上传文件需要在url地址添加/zuul/*前缀
+zuul:
+  sensitiveHeaders: Cookie,Set-Cookie,Authorization
+  routes: 
+    api-order: 
+      path: /core-order/**         #访问路径: http://localhost:4004/core-order/index
+      serviceId: core-order       
+    api-transport: 
+      path: /core-transport/**         
+      serviceId: core-transport  
+    api-invoke: 
+      path: /core-invoke/**         
+      serviceId: core-invoke  
+    api-dispatch: 
+      path: /core-dispatch/**         
+      serviceId: core-dispatch             
+##配置全局api路由网关超时时间
+##[这个时间尽可能的大,最好要包含调用服务内部的重试/段熔时间,保证内部服务返回正确的成功或失败信息]
+##并且不允许api路由网关进行重试
+#serviceName.ribbon.NFLoadBalancerRuleClassName=com.netflix.loadbalancer.RandomRule
+
+ribbon:  
+  #NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule
+  ConnectTimeout: 3000
+  ReadTimeout: 60000            
+  OkToRetryOnAllOperations: true  
+  MaxAutoRetriesNextServer: 1     
+  MaxAutoRetries: 1              
+
+##RoundRobinRule(轮询模式)
+##RandomRule(随机策略)
+##BestAvailableRule（并发量）
+##AvailabilityFilteringRule(服务器状态)
+##WeightedResponseTimeRule（根据响应时间）
+##ZoneAvoidanceRule（Zone状态+服务状态）
+##RetryRule(根据策略+重试)
+#hello-service: 
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule
+#配置全局api路由网关断路器请求超时时间设定,这个配置也要尽可能的大,原因同上
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000 
+
+feign: 
+  hystrix:
+    enabled: true
+  compression:
+    request:
+      min-request-size: 2048  
+      mime-types:
+        - text/xml, application/xml, application/json
+      enabled: true
+    respoonse: 
+      enabled: true
+      
+      
+      
+      
+      
+
+  
