@@ -91,7 +91,7 @@ dubbo:
     qos-prot: 22222
     qos-enable: true 
   scan:
-    basePackages: bhz.transport.service 
+    basePackages: bhz.transport.service,bhz.transport.service.*
   protocol:
     id: dubbo
     name: dubbo
