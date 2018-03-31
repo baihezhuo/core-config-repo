@@ -90,8 +90,8 @@ dubbo:
   application:
     id: core-transport
     name: core-transport
-    qos-port: 22221
-    qos-enable: true
+    qosPort: 22227
+    qosEnable: true
   scan: 
     basePackages: bhz.transport.service,bhz.transport.service.*\
   protocol:
