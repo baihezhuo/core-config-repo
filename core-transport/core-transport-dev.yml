@@ -83,4 +83,21 @@ pagehelper:
     reasonable: true
     supportMethodsArguments: true
     params: count=countSql
+ 
+ 
+dubbo:
+  application:
+    id: core-transport
+    name: core-transport
+  scan:
+    basePackages: bhz.transport.service 
+  protocol:
+    id: dubbo
+    name: dubbo
+    prot: 12345
+  registry:
+    id: core-transport-registry
+    address: zookeeper://192.168.1.111:2181?backup=192.168.1.112:2181,192.168.1.113:2181        
+ 
+    
     
